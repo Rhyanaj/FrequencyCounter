@@ -3,16 +3,18 @@
 //Counts for the multiplexer
 
 module TwoBitCounter(
-  input CLK,
-  input reset,
-  output reg countout
+  input TwoBitCLK,
+  output reg [1:0]countout = 2'b0
 );
-reg coutout = 2'b0;
-always @(posedge CLK) 
+always @(posedge TwoBitCLK) 
 begin
-  if(reset)
-  countout <= 0;
+  if(countout == 2'b11)
+  begin
+  countout = 0;
+  end
   else
-  countout <= countout + 1;
+  begin
+  countout = countout + 1;
+  end
 end
 endmodule

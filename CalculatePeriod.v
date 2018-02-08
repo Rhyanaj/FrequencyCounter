@@ -3,10 +3,8 @@
 // Calculates Period 
 
 module CalculatePeriod(
-    input sum,
-    output period
+    input [11:0] sum,
+    output [11:0] period
 );
-
-
-assign period = sum / 100000000;
+assign period = sum / 100000000 ;
 endmodule

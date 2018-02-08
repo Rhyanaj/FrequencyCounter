@@ -3,14 +3,14 @@
 //Decoder to set the placement of the 7 segment display
 
 module Decoder(
-    input countout,
+    input [1:0]countout,
     input [15:0]BCD,
-    output reg digits,
-    output reg LED_BCD
+    output reg [3:0]digits,
+    output reg [3:0]LED_BCD
 );
 
  always @(*)
-
+ 
      begin
           case(countout)
                2'b00: begin

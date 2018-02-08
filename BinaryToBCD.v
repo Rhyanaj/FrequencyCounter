@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+
 
 // Adapted From: http://www.deathbylogic.com/2013/12/bnum-to-bnum-coded-decimal-bcd-converter/
 //Using double dabble method with smallest input necessary
@@ -8,9 +8,10 @@ module BinaryToBCD(
      // I/O Signal Definitions
 
      input  [11:0] bnum,
-     output  reg [3:0] BCD
+     output reg [15:0] BCD
      
 );
+
 reg [3:0] thousands;
 reg [3:0] hundreds;
 reg [3:0] tens;
@@ -28,7 +29,7 @@ integer i;
 
           shift = 0;
           shift[11:0] = bnum;
-
+          
           // Loop 12 times
           for (i = 0; i < 12; i = i + 1)
           begin

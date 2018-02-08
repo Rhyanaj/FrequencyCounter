@@ -1,15 +1,16 @@
 module Top(
     input IN,
     input CLK, 
+    input reset,
     output [3:0]digits,
     output [6:0] SEG 
 );
 
-wire [11:0]bnum;
+wire [19:0]bnum;
 wire [1:0]countout;
 wire [15:0] BCD;
 wire [3:0] LED_BCD;
-wire TwoBitCLK;
+
 
 
 CounterTop u1(
@@ -23,17 +24,12 @@ BinaryToBCD u5(
     .BCD(BCD)
 );
 
-LowerFrequency u6(
-    .CLK(CLK),
-    .TwoBitCLK(TwoBitCLK)
-);
-TwoBitCounter u7(
-    .TwoBitCLK(TwoBitCLK),
-    .countout(countout)
-    );
+
+
     
 Decoder u8(
-    .countout(countout),
+    .CLK(CLK),
+    .reset(reset),
     .BCD(BCD),
     .digits(digits),
     .LED_BCD(LED_BCD)

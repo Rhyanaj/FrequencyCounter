@@ -3,12 +3,23 @@
 //Decoder to set the placement of the 7 segment display
 
 module Decoder(
-    input [1:0]countout,
+    input CLK,
     input [15:0]BCD,
+    input reset,
     output reg [3:0]digits,
     output reg [3:0]LED_BCD
 );
+reg [20:0] refresh_counter;
+wire [1:0]countout;
+    always @(posedge CLK)
+         begin
+            case(reset)
+            1'b1: refresh_counter <= 0;
+            default: refresh_counter <= refresh_counter + 1;
+            endcase
+         end
 
+    assign countout = refresh_counter[20:19];
  always @(*)
  
      begin

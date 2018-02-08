@@ -4,7 +4,7 @@
 
 module BCDtoSevenSeg(
 input [3:0] LED_BCD,
-output reg [6:0]SEG
+output reg [6:0]SEG = 7'b0
 );
 
 always@(*)

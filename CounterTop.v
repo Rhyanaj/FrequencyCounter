@@ -1,13 +1,13 @@
 module CounterTop(
     input CLK,
     input IN,
-    output [11:0]bnum
+    output [19:0]bnum
 );
 
-wire [11:0]on_count;
-wire [11:0]off_count;
-wire [11:0] sum;
-wire [11:0] period;
+wire [19:0]on_count;
+wire [19:0]off_count;
+wire [19:0] sum;
+wire [19:0] period;
 
 
 FrequencyCounter u1(

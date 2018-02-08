@@ -6,14 +6,14 @@
 module FrequencyCounter(
     input IN, 
     input CLK,
-    output reg [11:0]on_count,
-    output reg [11:0]off_count
+    output reg [19:0]on_count,
+    output reg [19:0]off_count
 );
 
 reg onflag =0;
 reg offflag =0;
-reg [11:0]CounterOn = 0;
-reg [11:0]CounterOff = 0;
+reg [19:0]CounterOn = 0;
+reg [19:0]CounterOff = 0;
 
 
 

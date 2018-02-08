@@ -3,8 +3,8 @@
 // Calculates Frequncy from period
 
 module OutputFrequency(
-    input [11:0]period,
-    output [11:0]bnum
+    input [19:0]period,
+    output [19:0]bnum
 );
 
 

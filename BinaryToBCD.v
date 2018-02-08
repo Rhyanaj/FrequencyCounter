@@ -7,7 +7,7 @@ module BinaryToBCD(
 
      // I/O Signal Definitions
 
-     input  [11:0] bnum,
+     input  [19:0] bnum,
      output reg [15:0] BCD
      
 );
